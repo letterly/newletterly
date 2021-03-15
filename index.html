@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <title>letterly.github.io project</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="favicon.ico?">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <script src="languagedata.js"></script>
+        <script src="ipa.js"></script>
+        <script src="run.js"></script>
+    </head>
+    <body>
+        <h1 id="header"><span class="orange">letterly</span>.<span class="red">github</span>.<span class="blue">io</span></h1>
+        <div id="root">
+            <!-- #2 Sentence Title -->
+            <h2 id="sentence"></h2>
+
+            <!-- #3 Words -->
+            <h3 id="words"></h3>
+
+            <!-- #4 Letter -->
+            <h1 id="letter"></h1>
+
+            <!-- #6 Multiple Choice Buttons-->
+            <div id="multiplechoice">
+                <button id="b1" onclick="multchoice(this.textContent)"></button>
+                <button id="b2" onclick="multchoice(this.textContent)"></button>
+                <button id="b3" onclick="multchoice(this.textContent)"></button>
+            </div>
+
+            <!-- #9 Keyboard -->
+            <div class="keyboard" id="keyboard">
+                <div id="Backquote" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit1" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit2" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit3" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit4" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit5" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit6" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit7" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit8" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit9" class="key" onclick="entertext(this.id)"></div>
+                <div id="Digit0" class="key" onclick="entertext(this.id)"></div>
+                <div id="Minus" class="key" onclick="entertext(this.id)"></div>
+                <div id="Equal" class="key" onclick="entertext(this.id)"></div>
+                <div id="Backspace" class="mediumbluekey">del</div>
+                <div id="Tab" class="mediumbluekey"></div>
+                <div id="KeyQ" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyW" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyE" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyR" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyT" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyY" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyU" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyI" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyO" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyP" class="key" onclick="entertext(this.id)"></div>
+                <div id="BracketLeft" class="key" onclick="entertext(this.id)"></div>
+                <div id="BracketRight" class="key" onclick="entertext(this.id)"></div>
+                <div id="Backslash" class="key" onclick="entertext(this.id)"></div>
+                <div id="CapsLock" class="largebluekey"></div>
+                <div id="KeyA" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyS" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyD" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyF" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyG" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyH" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyJ" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyK" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyL" class="key" onclick="entertext(this.id)"></div>
+                <div id="Semicolon" class="key" onclick="entertext(this.id)"></div>
+                <div id="Quote" class="key" onclick="entertext(this.id)"></div>
+                <div id="Enter" class="mediumbluekey"></div>
+                <div id="ShiftLeft" class="orangekey">shift</div>
+                <div id="KeyZ" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyX" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyC" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyV" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyB" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyN" class="key" onclick="entertext(this.id)"></div>
+                <div id="KeyM" class="key" onclick="entertext(this.id)"></div>
+                <div id="Comma" class="key" onclick="entertext(this.id)"></div>
+                <div id="Period" class="key" onclick="entertext(this.id)"></div>
+                <div id="Slash" class="bluekey"></div>
+                <div id="ShiftRight" class="orangekey">shift</div>
+            </div>
+                        
+            <!-- #7 Pronunciation Line -->
+            <div id="letterinfo">
+                <p id="pronunciation"></p>
+                <p id="listen" onclick="sound()"><b>[Listen here]</b></p>
+            </div>
+
+            <!-- #8 Input -->
+            <input id="input" placeholder="type here" spellcheck="false"></input>
+
+            <!-- #5 Continue Button -->
+            <button id="continue" class="widebutton neutral" onclick="next()">Continue</button>
+
+            <!-- #10 Enter Button -->
+            <button id="enterbutton" class="widebutton" onclick="enter()">Enter</button>
+        </div>
+        <div id="menu">
+
+            <div class="script" id="armenian-script">
+                <h2>Հայոց այբուբեն | Armenian Alphabet</h2>
+                <!-- <p class="scriptexplanation">Mesrop Mashtots invented the Armenian Alphabet in the early 5th century CE. In modern times it's only used for Armenian, but during the Ottoman Era, other languages sometimes adopted the Armenian alphabet. Under the USSR, the Armenian alphabet underwent a few reforms, which have been kept in place to the present day.</p> -->
+                <div class="levelpanel" id="armenian">
+                    <h2>հայերեն | Armenian</h2>
+                    <p>The Armenian language has a literary tradition that began in 405 CE after the priest Mesrop Mashtots invented its alphabet. In present times, Armenian is spoken by nearly seven million people. In addition to being the national language of the Republic of Armenia, you can find many speakers across the Armenian diaspora in Georgia, Russia, the USA, Lebanon, and other countries. Come learn how to read this beautiful language!</p>
+                    <div class="levelbox" id="armenian-levels"></div>
+                </div>
+            </div>
+            <div class="script" id="cyrillic-script">
+                <h2>Кириллица | Cyrillic Script</h2>
+                <!-- <p class="scriptexplanation">The two brothers Cyril and Methodius created the Glagotic Script in the 9th centry to spread Christianity to the Slavs, which soon evolved to become the Cyrillic alphabet. Most Slavic languages (the largest being Russian) are transcribed in Cyrillic, but many non-Slavic languages like Tajik, Kyrgyz, and Mongol use Cyrillic due to its encouragement by the Soviet Union. In total over 250 million people use Cyrillic, the majority of them for the Russian language.</p> -->
+                <div class="levelpanel" id="russian">
+                    <h2>Русский | Russian</h2>
+                    <p>Despite the collapse of the Soviet Union in 1991, Russian remains important in Eastern Europe and is even growing in popularity in Central Asia- with an estimated 260 million total speakers! Russian is one of the six official languages of the United Nations, and is the most spoken first language in Europe. If you want to be able to read an official language of four different countries (Russia, Kazakhstan, Belarus, Kyrgyzstan), click down below.</p>
+                    <div class="levelbox" id="russian-levels"></div>
+                </div>
+                <div class="levelpanel" id="bulgarian">
+                    <h2>Български | Bulgarian</h2>
+                    <p>Bulgarian is a South Slavic language with around 8-9 million speakers in the Republic of Bulgaria- an EU Member State on the Balkan peninsula. Historically, Middle Bulgarian was spoken in a much larger area in the Second Bulgarian Empire. Because of this, there are still many Bulgarian speaking towns in southern Ukraine and Moldova. Select a level below, to become literate in a language that is known for its simple grammar (compared to other Slavic languages).</p>
+                    <div class="levelbox" id="bulgarian-levels"></div>
+                </div>
+            </div>
+            <div class="script" id="hebrew-script">
+                <h2>אלפבית עברי | Hebrew Alphabet</h2>
+                <!-- <p class="scriptexplanation">The Hebrew alphabet in its original form is an 'abjad', meaning that only consonants are transcribed (vowel markings are optional). However, when adopted to foreign languages like Ladino and Yiddish, several Hebrew letters are used to represent vowels. Very important: Hebrew is written from right to left!</p> -->
+                <div class="levelpanel" id="hebrew">
+                    <h2>עברית | Hebrew</h2>
+                    <p>For millenia, Hebrew has remained the holy language of Judaism and it's the original language of the Old Testament (Tanakh). At the start of the 20th century, nobody used Hebrew outside of religious contexts. Now Hebrew is spoken by over ten million people and it is the national language of the State of Israel. This is the first foreign alphabet I learned; if I did it, you can too!</p>
+                    <div class="levelbox" id="hebrew-levels"></div>
+                </div>
+                <div class="levelpanel" id="yiddish">
+                    <h2>ייִדיש | Yiddish</h2>
+                    <p>Many English words such as "bagel" and "tchotchke" actually originate from Yiddish, the language of the Ashkenazi Jews. Yiddish is a Germanic language written in a form of the Hebrew alphabet. It has many words of Hebrew and Slavic origin. In 1940 there were around 12 million speakers of Yiddish, but due to genocide and assimilation, there are only around half a million speakers today. You can help revive Yiddish and learn about its 800 years of literary tradition, the first step is for you to complete the following course:</p>
+                    <div class="levelbox" id="yiddish-levels"></div>
+                </div>
+            </div>
+            <div class="script" id="greek-script">
+                <h2>Ελληνικό αλφάβητο | Greek Alphabet</h2>
+                <!-- <p class="scriptexplanation">There are few alphabets older than Greek, which has been continuously used to write the Greek language since ancient times. No new letters have been added, but the lowercase/uppercase distinction is actually a feature from modern times. The Greek script has been used all over the Mediterranean in antiquity, but in modern times only a few small minority languages in Greece are utilizing the Greek alphabet (not including the Greek language itself of course).</p> -->
+                <div class="levelpanel" id="greek">
+                    <h2>Ελληνική | Greek</h2>
+                    <p>In ancient times, the foundations for philosophy, mathematics, and logic were first transcribed in Greek. While Greek is no longer considered the main language of Western civilization, it is still the main language of both Cyprus and Greece and spoken by smaller communities in countries like Georgia, Ukraine, and Italy. Many Greek letters are important in science and mathematics, and a lot of Greek word roots have entered international vocabulary. The odds are that you are already familiar with some Greek letters, so don't hesitate to get started.</p>
+                    <div class="levelbox" id="greek-levels"></div>
+                </div>
+            </div>
+            <div class="script" id="tifinagh-script">
+                <h2>ⵜⵉⴼⵉⵏⴰⵖ | Tifinagh Script</h2>
+                <!-- <p class="scriptexplanation">While Amazigh activists faced persecution in the late 20th century while revitalizing their ancient script, the Tifinagh alphabet is increasingly accepted across North Africa. It is the official alphabet for the Amazigh languages in Morocco, where the government actively promotes and teaches Tifinagh. An older form of this alphabet, which ommits vowels, is used by Tuaregs in Sahelian countries such as Niger and Mali.</p> -->
+                <div class="levelpanel" id="tamazight">
+                    <h2>ⵜⴰⵎⴰⵣⵉⵖⵜ | Central Atlas Tamazight</h2>
+                    <p>The Amazigh languages are spoken by tens of millions of people across North Africa and the Sahel. Central Atlas Tamazight is the second-most spoken Amazigh language (with around 5 million speakers), spoken entirely in Morocco in the Atlas mountains. A modern variation of the ancient Tifinagh alphabet is principly used to write this language, with encourage from the government. A minority of people use Latin or Arabic but this is increasingly rare, so I suggest you start learning now.</p>
+                    <div class="levelbox" id="tamazight-levels"></div>
+                </div>
+            </div>
+            <div class="script" id="georgian-script">
+                <h2>ქართული დამწერლობა | Georgian Alphabet</h2>
+                <!-- <p class="scriptexplanation">"Mkhedruli", the former royal script in medieval Georgia, is now the standard way to write Georgian. The alphabet is a great source of national pride for the Georgian people and has been adapted to other Kartevelian languages in the region, such as Svan, Mingrelian, and Laz.</p> -->
+                <div class="levelpanel" id="georgian">
+                    <h2>ქართული | Georgian</h2>
+                    <p>The mountaineous republic of Georgia is situated in the southern Caucausus, where the Georgian people have maintained their language and culture for thousands of years, surviving centuries of foreign occupation. The Georgian language has an easy alphabet, with no capital/lowercase letter distinction. Doesn't sound so hard right? If you want to communicate with the ~3.7 million Georgians in the world, consider completing this course's levels.</p>
+                    <div class="levelbox" id="georgian-levels"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
